@@ -1,11 +1,22 @@
 LoginCounter1::Application.routes.draw do
-  get "welcome/index"
+  resources :users
+
+  post 'users/new' => 'users#create'
+
+  post 'users/add' => 'users#add_helper'
+
+  post 'users/login' => 'users#login_method'
+
+ # get 'users
+#  get 'users' => 'users.json'
+#  post 'users/login' => 'users#login_helper'
+ # post 'users/add' => 'users#add_helper'
+#  get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :posts
-  root 'welcome#index'
+ # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
