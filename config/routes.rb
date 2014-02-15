@@ -11,7 +11,9 @@ LoginCounter1::Application.routes.draw do
 #  get 'users' => 'users.json'
 #  post 'users/login' => 'users#login_helper'
  # post 'users/add' => 'users#add_helper'
-#  get "welcome/index"
+
+  get "welcome/index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
