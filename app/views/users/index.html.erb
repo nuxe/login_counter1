@@ -1,29 +1,21 @@
-<h1>Listing users</h1>
+<!-- remote: true, :url => {:action => :add_helper}, "data-type" => :json, -->
+<center>
+	<p><p> 
+<div id="top_message"><b>Login Page</b></h5></div>
+<p>
+<%= form_for(:user, :html => {:id => "Login_Form"}) do |f| %>
+  <%= f.label :username %>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.text_field :user %><br />
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Password</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <%= f.label :password %>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.password_field :password %><br />
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.password %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <p><p>
 
-<br>
+  <%= submit_tag "Login", :type => 'button', id: "login_button" %> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= submit_tag "New User", :type => 'button', id: "add_button" %>
+<% end %>
 
-<%= link_to 'New User', new_user_path %>
+<%= submit_tag "Logout", :type => 'button', id: "logout_button" %>
+<center>
